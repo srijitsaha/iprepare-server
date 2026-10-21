@@ -1,0 +1,87 @@
+I am making a MERN Stack AI Powered MCQ Questions Generator with answer. I want to generate selected numbers of Questions with selected Exam board like WBCHSE class 11 or class 12, selected subject like Physics, selected topic like Kinematics and these will be selected by user. Write a prompt that generates an array of user defined numbers of questions and each object should be this format - 
+{
+    question: "Question", 
+    options: ["Option 1", "Option 2", "Option 3", "Option 4"],  
+
+    correct: "Option 3",  
+    explaination: "Explaination"
+  } 
+
+And also the array should be in this format - 
+[
+  {
+    question: "Question", 
+    options: ["Option 1", "Option 2", "Option 3", "Option 4"],  
+
+    correct: "Option 3",  
+    explaination: "Explaination"
+  }, 
+  // Other questions...
+]
+
+This format must be followed strictly and make sure I can also convert this response into JavaScript object using JSON.parse() method and it should not throw any error during parsing. This is the sample output of whole array of question objects - 
+[
+  {
+    "question": "Which of the following fundamental forces is the strongest in nature?",
+    "options": ["Gravitational Force", "Electromagnetic Force", "Strong Nuclear Force", "Weak Nuclear Force"],
+    "correct": "Strong Nuclear Force",
+    "explaination": "The strong nuclear force binds protons and neutrons in the nucleus. It is the strongest of the four fundamental forces, approximately 10^38 times stronger than gravitational force, but acts only over a very short range (~10^-15 m)."
+  },
+  {
+    "question": "The dimensional formula for Planck's constant (h) is the same as that of:",
+    "options": ["Energy", "Linear Momentum", "Angular Momentum", "Force"],
+    "correct": "Angular Momentum",
+    "explaination": "Planck's constant h = Energy / Frequency. Dimension of Energy = [ML^2T^-2], Frequency = [T^-1]. So, [h] = [ML^2T^-1]. Angular Momentum (L = r x p) has dimensions [L][MLT^-1] = [ML^2T^-1]. Hence, they are dimensionally identical."
+  },
+  {
+    "question": "A student measures the length of a rod as 3.50 cm using a vernier caliper. How many significant figures are in this measurement?",
+    "options": ["2", "3", "4", "1"],
+    "correct": "3",
+    "explaination": "In the measurement 3.50 cm, the trailing zero after the decimal point is significant. All non-zero digits are significant, and zeros between non-zero digits or trailing zeros after a decimal point are significant. Thus, 3, 5, and 0 are all significant figures."
+  },
+  {
+    "question": "If the percentage error in the measurement of mass and velocity of a body are 2% and 3% respectively, the maximum percentage error in the measurement of its kinetic energy is:",
+    "options": ["5%", "8%", "1%", "6%"],
+    "correct": "8%",
+    "explaination": "Kinetic Energy K = (1/2)mv^2. Percentage error in K = % error in m + 2 × (% error in v) = 2% + 2×(3%) = 2% + 6% = 8%."
+  },
+  {
+    "question": "Which of the following pairs of physical quantities have the same dimensions?",
+    "options": ["Work and Power", "Momentum and Energy", "Torque and Work", "Stress and Strain"],
+    "correct": "Torque and Work",
+    "explaination": "Work = Force × Displacement = [MLT^-2][L] = [ML^2T^-2]. Torque = Force × Perpendicular distance = [MLT^-2][L] = [ML^2T^-2]. Both have the same dimensional formula. Power is Work/Time ([ML^2T^-3]), Momentum is [MLT^-1], Energy is [ML^2T^-2], Stress is [ML^-1T^-2], Strain is dimensionless."
+  },
+  {
+    "question": "The refractive index of water is measured as 1.33, 1.34, 1.32, 1.33, and 1.34 in five successive experiments. The mean absolute error is:",
+    "options": ["0.004", "0.008", "0.012", "0.016"],
+    "correct": "0.008",
+    "explaination": "Mean value = (1.33+1.34+1.32+1.33+1.34)/5 = 6.66/5 = 1.332. Absolute errors: |1.33-1.332|=0.002, |1.34-1.332|=0.008, |1.32-1.332|=0.012, |1.33-1.332|=0.002, |1.34-1.332|=0.008. Mean Absolute Error = (0.002+0.008+0.012+0.002+0.008)/5 = 0.032/5 = 0.0064 ≈ 0.008 (rounded to 1 significant figure in error)."
+  },
+  {
+    "question": "Which of the following is a dimensionless physical quantity?",
+    "options": ["Gravitational Constant (G)", "Planck's Constant (h)", "Strain", "Coefficient of Viscosity"],
+    "correct": "Strain",
+    "explaination": "Strain is defined as the ratio of change in dimension to the original dimension (ΔL/L or ΔV/V). Since it is a ratio of two similar physical quantities, it has no units and no dimensions (Dimensionless). G, h, and Coefficient of Viscosity all have specific dimensional formulas."
+  },
+  {
+    "question": "The time period (T) of a simple pendulum depends on length (l) and acceleration due to gravity (g) as T ∝ l^x g^y. Using dimensional analysis, the values of x and y are:",
+    "options": ["x=1/2, y=1/2", "x=1/2, y=-1/2", "x=-1/2, y=1/2", "x=1, y=-1"],
+    "correct": "x=1/2, y=-1/2",
+    "explaination": "[T] = [L]^x [LT^-2]^y = [L^(x+y) T^(-2y)]. Equating powers: For T: 1 = -2y => y = -1/2. For L: 0 = x + y => x = -y = 1/2. Thus T ∝ √(l/g)."
+  },
+  {
+    "question": "The SI unit of 'Luminous Intensity' is:",
+    "options": ["Lux", "Lumen", "Candela", "Watt per steradian"],
+    "correct": "Candela",
+    "explaination": "Candela (cd) is the SI base unit for luminous intensity. Lux (lx) is the unit of illuminance (lumen/m^2). Lumen (lm) is the unit of luminous flux. Watt per steradian is a unit of radiant intensity."
+  },
+  {
+    "question": "If the velocity of light (c), Planck's constant (h), and Gravitational constant (G) are taken as fundamental quantities, the dimension of mass in the new system is:",
+    "options": ["[c^1/2 h^1/2 G^-1/2]", "[c^-1/2 h^1/2 G^1/2]", "[c^1/2 h^-1/2 G^1/2]", "[c^-1/2 h^-1/2 G^-1/2]"],
+    "correct": "[c^1/2 h^1/2 G^-1/2]",
+    "explaination": "Let M ∝ c^x h^y G^z. [M] = [LT^-1]^x [ML^2T^-1]^y [M^-1L^3T^-2]^z = [M^(y-z) L^(x+2y+3z) T^(-x-y-2z)]. Equating powers: M: 1 = y - z; L: 0 = x + 2y + 3z; T: 0 = -x - y - 2z. Solving these gives x = 1/2, y = 1/2, z = -1/2. So M ∝ c^(1/2) h^(1/2) G^(-1/2)."
+  }
+]
+
+
+Also I am using openrouter.ai SDK and nvidia/nemotron-3-ultra-550b-a55b:free model. 

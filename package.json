@@ -1,0 +1,26 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "This is iPrepare server",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node --env-file=.env.local --watch index.js",
+    "ws": "node --env-file=.env --watch connections/websockets.js",
+    "start": "node --env-file=.env --watch index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Srijit Saha",
+  "license": "ISC",
+  "dependencies": {
+    "@openrouter/sdk": "^0.13.29",
+    "arctic": "^3.7.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.7.3",
+    "nodemailer": "^10.0.10",
+    "socket.io": "^4.8.3"
+  }
+}
