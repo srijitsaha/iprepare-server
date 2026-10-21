@@ -5,7 +5,7 @@ import { response } from "express";
 import { questionSystemPrompt1, questionUserPrompt1 } from "../prompts/prompt.js";
 
 const openrouter = new OpenRouter({
-  apiKey: process.env.OPENROUTER_API_KEY || "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",
+  apiKey: process.env.OPENROUTER_API_KEY,
 });
 
 
