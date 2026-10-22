@@ -1,4 +1,5 @@
 import nodemailer from "nodemailer";
+import fs from 'fs/promises'
 
 // Create a transporter using SMTP
 const transporter = nodemailer.createTransport({
@@ -23,13 +24,24 @@ try {
 
 
 export const sendEmailOTPForSignUp = async ({ email, otp }) => {
+
+  let signUpEmailTemplate = await fs.readFile('./services/emails/templates/VerifyOTPForSignup.html', 'utf-8')
+
+  signUpEmailTemplate = signUpEmailTemplate.replace('OTP_INDEX[0]', otp.toString()[0])
+  signUpEmailTemplate = signUpEmailTemplate.replace('OTP_INDEX[1]', otp.toString()[1])
+  signUpEmailTemplate = signUpEmailTemplate.replace('OTP_INDEX[2]', otp.toString()[2])
+  signUpEmailTemplate = signUpEmailTemplate.replace('OTP_INDEX[3]', otp.toString()[3])
+  signUpEmailTemplate = signUpEmailTemplate.replace('OTP_INDEX[4]', otp.toString()[4])
+  signUpEmailTemplate = signUpEmailTemplate.replace('OTP_INDEX[5]', otp.toString()[5])
+
+
   try {
     const info = await transporter.sendMail({
       from: '"Team iPrepare" <krishnasaha1111111@gmail.com>', // sender address
       to: email, // list of recipients
-      subject: "OTP verification", // subject line
+      subject: "Sign-Up OTP verification", // subject line
       // text: "Hello world?", // plain text body
-      html: `Your OTP for iPrepare is: ${otp}`, // HTML body
+      html: signUpEmailTemplate, // HTML body
     });
 
     console.log("Message sent: ", info.messageId);
