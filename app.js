@@ -26,6 +26,8 @@ app.use(express.static(path.join(import.meta.dirname, "static")))
 
 app.get('/', (req, res) => res.sendFile(path.join(import.meta.dirname, "static", "index.html")))
 
+app.get('/api/v1//health', (req, res) => res.status(200).json({ success: true, status: 'ok', timestamps: new Date().toISOString() }))
+
 app.use("/api/v1/user", userRouter)
 app.use("/api/v1/question", questionRouter)
 app.use("/api/v1/exam", examRouter)
