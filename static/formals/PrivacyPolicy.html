@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy - iPrepare</title>
+  <meta name="description"
+    content="Read the Privacy Policy for iPrepare. Learn what information we collect, how it is used, data retention, user privacy rights, and security policies." />
+  <meta name="robots" content="index, follow" />
+
+  <style>
+    /* Design Tokens */
+    :root {
+      --background: #ffffff;
+      --foreground: #09090b;
+      --card: #ffffff;
+      --card-foreground: #09090b;
+      --primary: #18181b;
+      --primary-foreground: #fafafa;
+      --primary-light: rgba(24, 24, 27, 0.08);
+      --muted: #f4f4f5;
+      --muted-foreground: #71717a;
+      --border: #e4e4e7;
+      --radius: 0.75rem;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --background: #09090b;
+        --foreground: #fafafa;
+        --card: #09090b;
+        --card-foreground: #fafafa;
+        --primary: #fafafa;
+        --primary-foreground: #18181b;
+        --primary-light: rgba(250, 250, 250, 0.12);
+        --muted: #27272a;
+        --muted-foreground: #a1a1aa;
+        --border: #27272a;
+      }
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--background);
+      color: var(--foreground);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 80rem;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    @media (min-width: 640px) {
+      .container {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .container {
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+    }
+
+    /* Header */
+    .site-header {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding-top: 1.25rem;
+      padding-bottom: 1.25rem;
+    }
+
+    .brand-title {
+      font-size: 1.125rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+    }
+
+    .brand-sub {
+      font-size: 0.75rem;
+      color: var(--muted-foreground);
+    }
+
+    .brand-icon {
+      width: 2.5rem;
+      height: 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius);
+      background-color: var(--primary);
+      color: var(--primary-foreground);
+    }
+
+    .brand-icon img {
+      width: 1.5rem;
+      height: 1.5rem;
+      object-fit: contain;
+    }
+
+    /* Hero */
+    .hero-section {
+      border-bottom: 1px solid var(--border);
+      background-color: rgba(244, 244, 245, 0.4);
+    }
+
+    .hero-inner {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+
+    @media (min-width: 640px) {
+      .hero-inner {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+      }
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-radius: 9999px;
+      border: 1px solid var(--border);
+      background-color: var(--background);
+      padding: 0.375rem 0.75rem;
+      font-size: 0.875rem;
+      color: var(--muted-foreground);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-title {
+      max-width: 48rem;
+      font-size: 2.25rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+    }
+
+    @media (min-width: 640px) {
+      .hero-title {
+        font-size: 3rem;
+      }
+    }
+
+    .hero-description {
+      margin-top: 1.25rem;
+      max-width: 42rem;
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--muted-foreground);
+    }
+
+    @media (min-width: 640px) {
+      .hero-description {
+        font-size: 1.125rem;
+      }
+    }
+
+    .hero-meta {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.25rem;
+      font-size: 0.875rem;
+      color: var(--muted-foreground);
+    }
+
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Content Layout */
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      padding-top: 2.5rem;
+      padding-bottom: 2.5rem;
+    }
+
+    @media (min-width: 1024px) {
+      .content-grid {
+        grid-template-columns: 260px minmax(0, 1fr);
+        padding-top: 3.5rem;
+        padding-bottom: 3.5rem;
+      }
+    }
+
+    /* Table of Contents Sidebar */
+    .sidebar {
+      height: fit-content;
+    }
+
+    @media (min-width: 1024px) {
+      .sidebar {
+        position: sticky;
+        top: 1.5rem;
+      }
+    }
+
+    .toc-card {
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background-color: var(--card);
+      padding: 1rem;
+    }
+
+    .toc-title {
+      margin-bottom: 1rem;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+
+    .nav-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .nav-btn {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      gap: 0.75rem;
+      border-radius: 0.5rem;
+      padding: 0.625rem 0.75rem;
+      text-align: left;
+      font-size: 0.875rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--muted-foreground);
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    .nav-btn:hover {
+      background-color: var(--muted);
+      color: var(--foreground);
+    }
+
+    .nav-btn.active {
+      background-color: var(--primary-light);
+      font-weight: 500;
+      color: var(--primary);
+    }
+
+    .nav-btn .chevron {
+      display: none;
+      margin-left: auto;
+    }
+
+    .nav-btn.active .chevron {
+      display: inline-block;
+    }
+
+    .nav-btn span {
+      flex: 1;
+    }
+
+    /* Policy Content */
+    .article-body {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .intro-card {
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background-color: rgba(244, 244, 245, 0.4);
+      padding: 1.25rem;
+    }
+
+    @media (min-width: 640px) {
+      .intro-card {
+        padding: 1.5rem;
+      }
+    }
+
+    .intro-title {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .intro-text {
+      font-size: 0.875rem;
+      line-height: 1.75;
+      color: var(--muted-foreground);
+    }
+
+    .policy-section {
+      scroll-margin-top: 6rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 2rem;
+    }
+
+    .policy-section:last-of-type {
+      border-bottom: 0;
+    }
+
+    .section-title {
+      margin-bottom: 1rem;
+      font-size: 1.25rem;
+      font-weight: 600;
+      letter-spacing: -0.025em;
+      color: var(--foreground);
+    }
+
+    @media (min-width: 640px) {
+      .section-title {
+        font-size: 1.5rem;
+      }
+    }
+
+    .subsection-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--foreground);
+      margin-top: 0.75rem;
+    }
+
+    .section-content {
+      font-size: 0.875rem;
+      line-height: 1.75;
+      color: var(--muted-foreground);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    @media (min-width: 640px) {
+      .section-content {
+        font-size: 1rem;
+      }
+    }
+
+    .section-content ul {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .section-content strong {
+      color: var(--foreground);
+    }
+
+    /* Contact Card */
+    .contact-card {
+      margin-top: 1rem;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background-color: var(--card);
+      padding: 1.25rem;
+    }
+
+    .contact-card-inner {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    .contact-icon-box {
+      width: 2.5rem;
+      height: 2.5rem;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0.5rem;
+      background-color: var(--primary-light);
+      color: var(--primary);
+    }
+
+    .contact-heading {
+      font-weight: 600;
+      color: var(--foreground);
+    }
+
+    .contact-sub {
+      margin-top: 0.25rem;
+      font-size: 0.875rem;
+      color: var(--muted-foreground);
+    }
+
+    .contact-link {
+      display: inline-block;
+      margin-top: 0.25rem;
+      word-break: break-all;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .contact-link:hover {
+      text-decoration: underline;
+    }
+
+    .contact-note {
+      margin-top: 0.75rem;
+      font-size: 0.75rem;
+      line-height: 1.25rem;
+      color: var(--muted-foreground);
+    }
+
+    /* Footer */
+    .article-footer {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      border-top: 1px solid var(--border);
+      padding-top: 1.5rem;
+    }
+
+    @media (min-width: 640px) {
+      .article-footer {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+    .footer-brand {
+      font-weight: 600;
+    }
+
+    .footer-desc {
+      margin-top: 0.25rem;
+      font-size: 0.875rem;
+      color: var(--muted-foreground);
+    }
+
+    .back-to-top-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      align-self: flex-start;
+      border-radius: 0.5rem;
+      border: 1px solid var(--border);
+      background-color: transparent;
+      color: var(--foreground);
+      padding: 0.5rem 1rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    @media (min-width: 640px) {
+      .back-to-top-btn {
+        align-self: auto;
+      }
+    }
+
+    .back-to-top-btn:hover {
+      background-color: var(--muted);
+    }
+
+    /* Icons */
+    .icon {
+      width: 1rem;
+      height: 1rem;
+      flex-shrink: 0;
+    }
+
+    .icon-lg {
+      width: 1.25rem;
+      height: 1.25rem;
+      flex-shrink: 0;
+    }
+
+    .icon-brand {
+      width: 1.5rem;
+      height: 1.5rem;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand-icon">
+        <img src="/Icon Without Logo.png" alt="iPrepare Logo" />
+      </div>
+      <div>
+        <p class="brand-title">iPrepare</p>
+        <p class="brand-sub">Exam Preparation &amp; Quiz Platform</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section" style="background: #2626264d;">
+    <div class="container hero-inner">
+      <div class="badge">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="16" r="1"></circle>
+          <rect width="18" height="12" x="3" y="10" rx="2"></rect>
+          <path d="M7 10V7a5 5 0 0 1 10 0v3"></path>
+        </svg>
+        Privacy &amp; Data Protection
+      </div>
+
+      <h1 class="hero-title">Privacy Policy</h1>
+
+      <p class="hero-description">
+        Your privacy matters to us. This policy explains what information iPrepare may collect, how it is used, and the
+        choices available to you when using our platform.
+      </p>
+
+      <div class="hero-meta">
+        <span class="meta-item">
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect>
+            <line x1="16" x2="16" y1="2" y2="6"></line>
+            <line x1="8" x2="8" y1="2" y2="6"></line>
+            <line x1="3" x2="21" y1="10" y2="10"></line>
+          </svg>
+          Last updated: October 18, 2026
+        </span>
+        <span class="meta-item">
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z">
+            </path>
+            <path d="m9 12 2 2 4-4"></path>
+          </svg>
+          Privacy and transparency
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content Layout -->
+  <main class="container content-grid">
+    <!-- Table of Contents Sidebar (Static, directly indexed HTML) -->
+    <aside class="sidebar">
+      <div class="toc-card">
+        <h2 class="toc-title">On this page</h2>
+        <nav aria-label="Privacy Policy sections" class="nav-list" id="toc-nav">
+          <button type="button" class="nav-btn active" data-target="introduction">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z">
+              </path>
+              <path d="m9 12 2 2 4-4"></path>
+            </svg>
+            <span>Introduction</span>
+            <svg class="icon chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m9 18 6-6-6-6"></path>
+            </svg>
+          </button>
+
+          <button type="button" class="nav-btn" data-target="information">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+              <path d="M3 5V19A9 3 0 0 0 21 19V5"></path>
+              <path d="M3 12A9 3 0 0 0 21 12"></path>
+            </svg>
+            <span>Information We Collect</span>
+            <svg class="icon chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m9 18 6-6-6-6"></path>
+            </svg>
+          </button>
+
+          <button type="button" class="nav-btn" data-target="usage">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 20v-7"></path>
+              <path d="M18 20V4"></path>
+              <path d="M6 20v-4"></path>
+            </svg>
+            <span>How We Use Information</span>
+            <svg class="icon chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m9 18 6-6-6-6"></path>
+            </svg>
+          </button>
+
+          <button type="button" class="nav-btn" data-target="quizzes">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
+              <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
+              <path d="M10 9H8"></path>
+              <path d="M16 13H8"></path>
+              <path d="M16 17H8"></path>
+            </svg>
+            <span>Quizzes and Challenges</span>
+            <svg class="icon chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m9 18 6-6-6-6"></path>
+            </svg>
+          </button>
+
+          <button type="button" class="nav-btn" data-target="sharing">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="8" r="5"></circle>
+              <path d="M20 21a8 8 0 0 0-16 0"></path>
+            </svg>
+            <span>Data Sharing</span>
+            <svg class="icon chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m9 18 6-6-6-6"></path>
+            </svg>
+          </button>
+
+          <button type="button" class="nav-btn" data-target="cookies">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"></path>
+              <path d="M8.5 8.5v.01"></path>
+              <path d="M16 15.5v.01"></path>
+              <path d="M12 12v.01"></path>
+              <path d="M11 17v.01"></path>
+              <path d="M7 14v.01"></path>
+            </svg>
+            <span>Cookies and Technologies</span>
+            <svg class="icon chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m9 18 6-6-6-6"></path>
+            </svg>
+          </button>
+
+          <button type="button" class="nav-btn" data-target="security">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="16" r="1"></circle>
+              <rect width="18" height="12" x="3" y="10" rx="2"></rect>
+              <path d="M7 10V7a5 5 0 0 1 10 0v3"></path>
+            </svg>
+            <span>Data Security</span>
+            <svg class="icon chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m9 18 6-6-6-6"></path>
+            </svg>
+          </button>
+
+          <button type="button" class="nav-btn" data-target="retention">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+              <path d="M3 5V19A9 3 0 0 0 21 19V5"></path>
+              <path d="M3 12A9 3 0 0 0 21 12"></path>
+            </svg>
+            <span>Data Retention</span>
+            <svg class="icon chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m9 18 6-6-6-6"></path>
+            </svg>
+          </button>
+
+          <button type="button" class="nav-btn" data-target="rights">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <polyline points="16 11 18 13 22 9"></polyline>
+            </svg>
+            <span>Your Privacy Rights</span>
+            <svg class="icon chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m9 18 6-6-6-6"></path>
+            </svg>
+          </button>
+
+          <button type="button" class="nav-btn" data-target="children">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="8" r="5"></circle>
+              <path d="M20 21a8 8 0 0 0-16 0"></path>
+            </svg>
+            <span>Children's Privacy</span>
+            <svg class="icon chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m9 18 6-6-6-6"></path>
+            </svg>
+          </button>
+
+          <button type="button" class="nav-btn" data-target="third-party">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path>
+              <path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path>
+              <path d="M7 21h10"></path>
+              <path d="M12 3v18"></path>
+              <path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"></path>
+            </svg>
+            <span>Third-Party Services</span>
+            <svg class="icon chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m9 18 6-6-6-6"></path>
+            </svg>
+          </button>
+
+          <button type="button" class="nav-btn" data-target="changes">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
+              <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
+              <path d="M10 9H8"></path>
+              <path d="M16 13H8"></path>
+              <path d="M16 17H8"></path>
+            </svg>
+            <span>Policy Updates</span>
+            <svg class="icon chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m9 18 6-6-6-6"></path>
+            </svg>
+          </button>
+
+          <button type="button" class="nav-btn" data-target="contact">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+            </svg>
+            <span>Contact Us</span>
+            <svg class="icon chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m9 18 6-6-6-6"></path>
+            </svg>
+          </button>
+        </nav>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <article class="article-body">
+      <div class="intro-card" style="background-color: #2626264d;">
+        <h2 class="intro-title">Your information, your privacy</h2>
+        <p class="intro-text">
+          iPrepare is a platform for quiz practice, performance tracking, and interactive challenges. We aim to handle
+          personal information responsibly and explain our data practices clearly. The information we collect depends on
+          the features you use and the services enabled in your account.
+        </p>
+      </div>
+
+      <section id="introduction" class="policy-section">
+        <h2 class="section-title">1. Introduction</h2>
+        <div class="section-content">
+          <p>
+            This Privacy Policy describes how iPrepare ("we," "our," or "us") collects, uses, stores, and discloses
+            information when you access or use our website, application, and related services.
+          </p>
+          <p>
+            By using iPrepare, you acknowledge this policy. Where applicable law requires consent for a particular
+            processing activity, we will obtain that consent separately.
+          </p>
+          <p>
+            This policy should be read together with our Terms of Service. If you do not agree with our data practices,
+            please discontinue use of the platform and contact us with any privacy concerns.
+          </p>
+        </div>
+      </section>
+
+      <section id="information" class="policy-section">
+        <h2 class="section-title">2. Information We Collect</h2>
+        <div class="section-content">
+          <h3 class="subsection-title">2.1 Account information</h3>
+          <p>
+            When you register or use an account, we may collect information such as:
+          </p>
+          <ul>
+            <li>Name or display name.</li>
+            <li>Email address and account identifier.</li>
+            <li>Authentication information needed to verify your identity and maintain your account.</li>
+            <li>Profile information that you choose to provide.</li>
+          </ul>
+          <p>
+            We do not intend to collect your account password in readable form. Where passwords are managed by our
+            application, they should be stored using an appropriate secure password-hashing method.
+          </p>
+
+          <h3 class="subsection-title">2.2 Quiz and performance information</h3>
+          <p>
+            To provide quizzes and progress-tracking features, we may process:
+          </p>
+          <ul>
+            <li>Quiz attempts, selected answers, and scores.</li>
+            <li>Topics, subjects, and exam categories selected.</li>
+            <li>Number of questions attempted and correct answers.</li>
+            <li>Quiz dates, durations, completion status, and related performance statistics, where recorded.</li>
+            <li>Bookmarks and saved questions.</li>
+            <li>Challenge participation, results, and rankings, where these features are available.</li>
+          </ul>
+
+          <h3 class="subsection-title">2.3 Technical and usage information</h3>
+          <p>
+            When you use iPrepare, our servers or enabled third-party services may process technical information such as
+            IP address, browser type, device information, request timestamps, diagnostic logs, and information about
+            interactions with the platform.
+          </p>
+          <p>
+            The exact information collected depends on our hosting, security, analytics, and application configuration.
+          </p>
+
+          <h3 class="subsection-title">2.4 Information you provide voluntarily</h3>
+          <p>
+            If you contact support, report a problem, or send feedback, we may collect the information you include in
+            your message and any information reasonably necessary to respond.
+          </p>
+        </div>
+      </section>
+
+      <section id="usage" class="policy-section">
+        <h2 class="section-title">3. How We Use Your Information</h2>
+        <div class="section-content">
+          <p>
+            We may use information for the following purposes, where applicable and permitted by law:
+          </p>
+          <ul>
+            <li>Create and manage user accounts and authenticate users.</li>
+            <li>Deliver quizzes, calculate scores, and display results.</li>
+            <li>Track quiz history, bookmarks, and study progress.</li>
+            <li>Support challenge mode and display relevant competition results.</li>
+            <li>Maintain the security, stability, and functionality of the application.</li>
+            <li>Diagnose errors, prevent abuse, and investigate suspected fraud or misuse.</li>
+            <li>Respond to questions, feedback, and support requests.</li>
+            <li>Meet legal obligations and enforce our terms where necessary.</li>
+          </ul>
+          <p>
+            We will not use personal information for a materially different purpose without an appropriate legal basis
+            or any additional consent required by law.
+          </p>
+        </div>
+      </section>
+
+      <section id="quizzes" class="policy-section">
+        <h2 class="section-title">4. Quizzes, Progress, and Challenges</h2>
+        <div class="section-content">
+          <p>
+            iPrepare processes quiz and activity information to calculate scores and provide progress statistics. This
+            information may be associated with your account so that you can review your previous activity.
+          </p>
+          <p>
+            If you participate in challenge mode, certain information, such as your display name, score, or challenge
+            outcome, may be visible to the other participant or to other users if the relevant feature displays public
+            results or rankings.
+          </p>
+          <p>
+            We recommend avoiding sensitive personal information in your display name or any optional profile field. We
+            do not promise that challenge participation or account activity will be anonymous to other participants.
+          </p>
+        </div>
+      </section>
+
+      <section id="sharing" class="policy-section">
+        <h2 class="section-title">5. How We Share Information</h2>
+        <div class="section-content">
+          <p>
+            We do not sell personal information as part of the ordinary operation described by this policy. We may
+            disclose information in the following circumstances, when applicable:
+          </p>
+          <ul>
+            <li>
+              <strong>Service providers:</strong> To hosting providers, database providers, email services, security
+              providers, and other vendors that help operate iPrepare.
+            </li>
+            <li>
+              <strong>Other users:</strong> To the extent necessary for challenge mode, leaderboards, or other features
+              that display participant information.
+            </li>
+            <li>
+              <strong>Legal requirements:</strong> When disclosure is required by law, a valid legal process, or a
+              competent authority.
+            </li>
+            <li>
+              <strong>Security and protection:</strong> When reasonably necessary to investigate fraud, protect the
+              platform, or safeguard users' rights and safety, subject to applicable law.
+            </li>
+            <li>
+              <strong>Business changes:</strong> In connection with a merger, acquisition, or transfer of business
+              assets, subject to applicable legal requirements and appropriate safeguards.
+            </li>
+          </ul>
+          <p>
+            Where third parties process personal information on our behalf, we aim to use appropriate contractual and
+            security safeguards.
+          </p>
+        </div>
+      </section>
+
+      <section id="cookies" class="policy-section">
+        <h2 class="section-title">6. Cookies and Similar Technologies</h2>
+        <div class="section-content">
+          <p>
+            iPrepare or its service providers may use cookies, local storage, session identifiers, or similar
+            technologies to support functions such as maintaining login sessions, protecting accounts, remembering
+            preferences, and improving reliability.
+          </p>
+          <p>
+            Whether analytics or other non-essential technologies are used depends on the services enabled on our
+            platform. Where consent is required, we will seek it before using the relevant technologies.
+          </p>
+          <p>
+            You can manage cookies through your browser settings. Blocking essential storage or cookies may affect login
+            sessions or other features.
+          </p>
+        </div>
+      </section>
+
+      <section id="security" class="policy-section">
+        <h2 class="section-title">7. Data Security</h2>
+        <div class="section-content">
+          <p>
+            We take reasonable technical and organizational measures designed to protect personal information against
+            unauthorized access, disclosure, alteration, loss, or destruction.
+          </p>
+          <p>
+            Depending on our implementation, safeguards may include access controls, secure authentication, encryption
+            in transit, protected database access, backups, and security monitoring.
+          </p>
+          <p>
+            No website, network, or storage system can be guaranteed to be completely secure. We therefore cannot
+            promise absolute security. If a personal data breach occurs, we will take appropriate steps and provide
+            notifications where required by applicable law.
+          </p>
+        </div>
+      </section>
+
+      <section id="retention" class="policy-section">
+        <h2 class="section-title">8. Data Retention and Deletion</h2>
+        <div class="section-content">
+          <p>
+            We retain personal information only for as long as reasonably necessary for the purposes described in this
+            policy, including providing the service, maintaining account history, resolving disputes, preventing abuse,
+            and meeting legal obligations.
+          </p>
+          <p>
+            Retention periods may differ depending on the type of information, its purpose, applicable law, and
+            technical requirements.
+          </p>
+          <p>
+            You may request account deletion or deletion of eligible personal information by contacting us through the
+            details below or using an available account-deletion feature.
+          </p>
+          <p>
+            Following a valid request, we will handle deletion in accordance with applicable law and our retention
+            obligations. Some information may need to be retained for a lawful reason, and residual copies may remain
+            temporarily in protected backups until those backups are rotated or deleted.
+          </p>
+        </div>
+      </section>
+
+      <section id="rights" class="policy-section">
+        <h2 class="section-title">9. Your Privacy Rights and Choices</h2>
+        <div class="section-content">
+          <p>
+            Depending on your location and applicable law, you may have rights relating to your personal information,
+            including the right to:
+          </p>
+          <ul>
+            <li>Request information about personal data we process.</li>
+            <li>Request correction of inaccurate or incomplete information.</li>
+            <li>Request deletion of personal information where applicable.</li>
+            <li>Withdraw consent where processing is based on consent, subject to legal and practical limitations.</li>
+            <li>Raise a grievance or submit a privacy-related complaint through the appropriate channel.</li>
+            <li>Exercise any additional rights provided by applicable data-protection law.</li>
+          </ul>
+          <p>
+            To exercise a right, contact us using the details in the Contact Us section. We may need to verify your
+            identity before responding. We will handle requests within the time limits prescribed by applicable law.
+          </p>
+        </div>
+      </section>
+
+      <section id="children" class="policy-section">
+        <h2 class="section-title">10. Children's Privacy</h2>
+        <div class="section-content">
+          <p>
+            iPrepare may be used by students, including minors. Where users are children under applicable law, we will
+            handle their personal information in accordance with the requirements that apply to the service and the
+            relevant age group.
+          </p>
+          <p>
+            Where required by law, we will obtain verifiable parental or guardian consent before processing a child's
+            personal data and implement applicable protections.
+          </p>
+          <p>
+            We do not intend to collect more personal information from children than is reasonably necessary for the
+            relevant service. If you believe a child's information has been collected or processed improperly, please
+            contact us.
+          </p>
+        </div>
+      </section>
+
+      <section id="third-party" class="policy-section">
+        <h2 class="section-title">11. Third-Party Services and Links</h2>
+        <div class="section-content">
+          <p>
+            iPrepare may rely on external providers for services such as hosting, databases, authentication, email
+            delivery, security, or analytics. If enabled, these providers may process information as necessary to
+            deliver their services.
+          </p>
+          <p>
+            The platform may also link to third-party websites. We do not control the privacy practices of websites that
+            we do not operate. Please review their privacy policies before providing personal information.
+          </p>
+          <p>
+            We will update this policy or provide additional notices where required to explain material data processing
+            arrangements.
+          </p>
+        </div>
+      </section>
+
+      <section id="changes" class="policy-section">
+        <h2 class="section-title">12. Changes to This Privacy Policy</h2>
+        <div class="section-content">
+          <p>
+            We may update this policy to reflect changes in our services, data practices, or legal requirements. When
+            material changes are made, we will take reasonable steps to notify users where appropriate or required by
+            law.
+          </p>
+          <p>
+            The latest version will display its effective or last-updated date. Where required, we will obtain renewed
+            consent before implementing changes that require it.
+          </p>
+        </div>
+      </section>
+
+      <section id="contact" class="policy-section">
+        <h2 class="section-title">13. Contact Us</h2>
+        <div class="section-content">
+          <p>
+            If you have a question, wish to exercise your privacy rights, or want to raise a concern about how your
+            personal information is handled, contact the iPrepare team using the details below.
+          </p>
+
+          <div class="contact-card">
+            <div class="contact-card-inner">
+              <div class="contact-icon-box">
+                <svg class="icon-lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="contact-heading">iPrepare Privacy Support</h3>
+                <p class="contact-sub">Privacy inquiries and grievances</p>
+                <a href="mailto:privacypolicy@iprepare.com" class="contact-link">
+                  privacypolicy@iprepare.com
+                </a>
+                <p class="contact-note">
+                  Replace this placeholder with your monitored privacy or support email address before publishing. Add
+                  any legally required grievance officer or data-protection contact details.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="article-footer">
+        <div>
+          <p class="footer-brand">iPrepare</p>
+          <p class="footer-desc">
+            Practise. Challenge. Track your progress.
+          </p>
+        </div>
+
+        <button type="button" id="back-to-top" class="back-to-top-btn">
+          Back to top
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m5 12 7-7 7 7"></path>
+            <path d="M12 19V5"></path>
+          </svg>
+        </button>
+      </footer>
+    </article>
+  </main>
+
+  <!-- JavaScript matching React component behavior -->
+  <script>
+    (function () {
+      const navButtons = document.querySelectorAll(".nav-btn");
+      const backToTopBtn = document.getElementById("back-to-top");
+
+      function setActiveSection(targetId) {
+        navButtons.forEach(function (button) {
+          if (button.getAttribute("data-target") === targetId) {
+            button.classList.add("active");
+          } else {
+            button.classList.remove("active");
+          }
+        });
+      }
+
+      function navigateToSection(targetId) {
+        setActiveSection(targetId);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
+      }
+
+      // Sidebar buttons click handler
+      navButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          const targetId = button.getAttribute("data-target");
+          if (targetId) {
+            navigateToSection(targetId);
+          }
+        });
+      });
+
+      // Back to top click handler
+      if (backToTopBtn) {
+        backToTopBtn.addEventListener("click", function () {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+        });
+      }
+    })();
+  </script>
+</body>
+
+</html>

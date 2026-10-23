@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terms of Service - iPrepare</title>
+    <meta name="description"
+        content="Read the Terms of Service for iPrepare. Learn about user eligibility, acceptable use, platform services, quizzes, challenge mode, and legal policies." />
+    <meta name="robots" content="index, follow" />
+
+    <style>
+        /* CSS Variables matching Tailwind/shadcn defaults */
+        :root {
+            --background: #ffffff;
+            --foreground: #09090b;
+            --card: #ffffff;
+            --card-foreground: #09090b;
+            --primary: #18181b;
+            --primary-foreground: #fafafa;
+            --primary-light: rgba(24, 24, 27, 0.08);
+            --muted: #f4f4f5;
+            --muted-foreground: #71717a;
+            --border: #e4e4e7;
+            --radius: 0.75rem;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --background: #09090b;
+                --foreground: #fafafa;
+                --card: #09090b;
+                --card-foreground: #fafafa;
+                --primary: #fafafa;
+                --primary-foreground: #18181b;
+                --primary-light: rgba(250, 250, 250, 0.12);
+                --muted: #27272a;
+                --muted-foreground: #a1a1aa;
+                --border: #27272a;
+            }
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--background);
+            color: var(--foreground);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 80rem;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        @media (min-width: 640px) {
+            .container {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+        }
+
+        /* Header */
+        .site-header {
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding-top: 1.25rem;
+            padding-bottom: 1.25rem;
+        }
+
+        .brand-icon {
+            width: 2.5rem;
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--radius);
+            background-color: var(--primary);
+            color: var(--primary-foreground);
+        }
+
+        .brand-icon img {
+            width: 1.5rem;
+            height: 1.5rem;
+            object-fit: contain;
+        }
+
+        .brand-title {
+            font-size: 1.125rem;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+        }
+
+        .brand-sub {
+            font-size: 0.75rem;
+            color: var(--muted-foreground);
+        }
+
+        /* Hero */
+        .hero-section {
+            border-bottom: 1px solid var(--border);
+            background-color: rgba(244, 244, 245, 0.4);
+        }
+
+        .hero-inner {
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+        }
+
+        @media (min-width: 640px) {
+            .hero-inner {
+                padding-top: 4rem;
+                padding-bottom: 4rem;
+            }
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-radius: 9999px;
+            border: 1px solid var(--border);
+            background-color: var(--background);
+            padding: 0.375rem 0.75rem;
+            font-size: 0.875rem;
+            color: var(--muted-foreground);
+            margin-bottom: 1.25rem;
+        }
+
+        .hero-title {
+            max-width: 48rem;
+            font-size: 2.25rem;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+            line-height: 1.2;
+        }
+
+        @media (min-width: 640px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+        }
+
+        .hero-description {
+            margin-top: 1.25rem;
+            max-width: 42rem;
+            font-size: 1rem;
+            line-height: 1.75;
+            color: var(--muted-foreground);
+        }
+
+        @media (min-width: 640px) {
+            .hero-description {
+                font-size: 1.125rem;
+            }
+        }
+
+        .hero-meta {
+            margin-top: 1.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 1.25rem;
+            font-size: 0.875rem;
+            color: var(--muted-foreground);
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Layout Content */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+            padding-top: 2.5rem;
+            padding-bottom: 2.5rem;
+        }
+
+        @media (min-width: 1024px) {
+            .content-grid {
+                grid-template-columns: 260px minmax(0, 1fr);
+                padding-top: 3.5rem;
+                padding-bottom: 3.5rem;
+            }
+        }
+
+        /* Sidebar Navigation */
+        .sidebar {
+            height: fit-content;
+        }
+
+        @media (min-width: 1024px) {
+            .sidebar {
+                position: sticky;
+                top: 1.5rem;
+            }
+        }
+
+        .toc-card {
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            background-color: var(--card);
+            padding: 1rem;
+        }
+
+        .toc-title {
+            margin-bottom: 1rem;
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .nav-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .nav-btn {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            gap: 0.75rem;
+            border-radius: 0.5rem;
+            padding: 0.625rem 0.75rem;
+            text-align: left;
+            font-size: 0.875rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--muted-foreground);
+            transition: background-color 0.2s, color 0.2s;
+            text-decoration: none;
+        }
+
+        .nav-btn:hover {
+            background-color: var(--muted);
+            color: var(--foreground);
+        }
+
+        .nav-btn.active {
+            background-color: var(--primary-light);
+            font-weight: 500;
+            color: var(--primary);
+        }
+
+        .nav-btn .chevron {
+            display: none;
+            margin-left: auto;
+        }
+
+        .nav-btn.active .chevron {
+            display: inline-block;
+        }
+
+        .nav-btn span {
+            flex: 1;
+        }
+
+        /* Main Article Sections */
+        .article-body {
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .intro-card {
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            background-color: rgba(244, 244, 245, 0.4);
+            padding: 1.25rem;
+        }
+
+        @media (min-width: 640px) {
+            .intro-card {
+                padding: 1.5rem;
+            }
+        }
+
+        .intro-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .intro-text {
+            font-size: 0.875rem;
+            line-height: 1.75;
+            color: var(--muted-foreground);
+        }
+
+        .terms-section {
+            scroll-margin-top: 6rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 2rem;
+        }
+
+        .terms-section:last-of-type {
+            border-bottom: 0;
+        }
+
+        .section-title {
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+            letter-spacing: -0.025em;
+            color: var(--foreground);
+        }
+
+        @media (min-width: 640px) {
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+
+        .section-content {
+            font-size: 0.875rem;
+            line-height: 1.75;
+            color: var(--muted-foreground);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        @media (min-width: 640px) {
+            .section-content {
+                font-size: 1rem;
+            }
+        }
+
+        .section-content ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        /* Contact Card */
+        .contact-card {
+            margin-top: 1rem;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            background-color: var(--card);
+            padding: 1.25rem;
+        }
+
+        .contact-card-inner {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .contact-icon-box {
+            width: 2.5rem;
+            height: 2.5rem;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.5rem;
+            background-color: var(--primary-light);
+            color: var(--primary);
+        }
+
+        .contact-heading {
+            font-weight: 600;
+            color: var(--foreground);
+        }
+
+        .contact-sub {
+            margin-top: 0.25rem;
+            font-size: 0.875rem;
+            color: var(--muted-foreground);
+        }
+
+        .contact-link {
+            display: inline-block;
+            margin-top: 0.25rem;
+            word-break: break-all;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .contact-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        .article-footer {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            border-top: 1px solid var(--border);
+            padding-top: 1.5rem;
+        }
+
+        @media (min-width: 640px) {
+            .article-footer {
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+
+        .footer-brand {
+            font-weight: 600;
+        }
+
+        .footer-desc {
+            margin-top: 0.25rem;
+            font-size: 0.875rem;
+            color: var(--muted-foreground);
+        }
+
+        .back-to-top-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            align-self: flex-start;
+            border-radius: 0.5rem;
+            border: 1px solid var(--border);
+            background-color: transparent;
+            color: var(--foreground);
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        @media (min-width: 640px) {
+            .back-to-top-btn {
+                align-self: auto;
+            }
+        }
+
+        .back-to-top-btn:hover {
+            background-color: var(--muted);
+        }
+
+        /* Common Icon sizing */
+        .icon {
+            width: 1rem;
+            height: 1rem;
+            flex-shrink: 0;
+        }
+
+        .icon-lg {
+            width: 1.25rem;
+            height: 1.25rem;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Page Header -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="brand-icon">
+                <img src="/Icon Without Logo.png" alt="iPrepare Logo" />
+            </div>
+            <div>
+                <p class="brand-title">iPrepare</p>
+                <p class="brand-sub">Exam Preparation &amp; Quiz Platform</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" style="background: #2626264d;">
+        <div class="container hero-inner" >
+            <div class="badge">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
+                    <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
+                    <path d="M10 9H8"></path>
+                    <path d="M16 13H8"></path>
+                    <path d="M16 17H8"></path>
+                </svg>
+                Legal Information
+            </div>
+
+            <h1 class="hero-title">Terms of Service</h1>
+
+            <p class="hero-description">
+                Please read these terms carefully before using iPrepare. They explain your rights, responsibilities, and
+                the rules that apply when you use our platform.
+            </p>
+
+            <div class="hero-meta">
+                <span class="meta-item">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect>
+                        <line x1="16" x2="16" y1="2" y2="6"></line>
+                        <line x1="8" x2="8" y1="2" y2="6"></line>
+                        <line x1="3" x2="21" y1="10" y2="10"></line>
+                    </svg>
+                    Last updated: October 18, 2026
+                </span>
+                <span class="meta-item">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z">
+                        </path>
+                        <path d="m9 12 2 2 4-4"></path>
+                    </svg>
+                    Your use of iPrepare
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Layout -->
+    <main class="container content-grid">
+        <!-- Sidebar / Table of Contents (Manually rendered for direct SEO indexing) -->
+        <aside class="sidebar">
+            <div class="toc-card">
+                <h2 class="toc-title">On this page</h2>
+                <nav aria-label="Terms of Service sections" class="nav-list" id="toc-nav">
+                    <button type="button" class="nav-btn active" data-target="acceptance">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
+                            <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
+                            <path d="M10 9H8"></path>
+                            <path d="M16 13H8"></path>
+                            <path d="M16 17H8"></path>
+                        </svg>
+                        <span>Acceptance of Terms</span>
+                        <svg class="icon chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m9 18 6-6-6-6"></path>
+                        </svg>
+                    </button>
+
+                    <button type="button" class="nav-btn" data-target="eligibility">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="8" r="5"></circle>
+                            <path d="M20 21a8 8 0 0 0-16 0"></path>
+                        </svg>
+                        <span>Eligibility and Accounts</span>
+                        <svg class="icon chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m9 18 6-6-6-6"></path>
+                        </svg>
+                    </button>
+
+                    <button type="button" class="nav-btn" data-target="services">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"></path>
+                            <path d="m9 9.5 2 2 4-4"></path>
+                        </svg>
+                        <span>Our Services</span>
+                        <svg class="icon chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m9 18 6-6-6-6"></path>
+                        </svg>
+                    </button>
+
+                    <button type="button" class="nav-btn" data-target="challenges">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+                            <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+                            <path d="M4 22h16"></path>
+                            <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
+                            <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
+                            <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path>
+                        </svg>
+                        <span>Quizzes and Challenge Mode</span>
+                        <svg class="icon chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m9 18 6-6-6-6"></path>
+                        </svg>
+                    </button>
+
+                    <button type="button" class="nav-btn" data-target="conduct">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="m4.9 4.9 14.2 14.2"></path>
+                        </svg>
+                        <span>Acceptable Use</span>
+                        <svg class="icon chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m9 18 6-6-6-6"></path>
+                        </svg>
+                    </button>
+
+                    <button type="button" class="nav-btn" data-target="intellectual-property">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z">
+                            </path>
+                            <path d="m9 12 2 2 4-4"></path>
+                        </svg>
+                        <span>Intellectual Property</span>
+                        <svg class="icon chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m9 18 6-6-6-6"></path>
+                        </svg>
+                    </button>
+
+                    <button type="button" class="nav-btn" data-target="disclaimer">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path>
+                            <path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path>
+                            <path d="M7 21h10"></path>
+                            <path d="M12 3v18"></path>
+                            <path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"></path>
+                        </svg>
+                        <span>Disclaimers</span>
+                        <svg class="icon chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m9 18 6-6-6-6"></path>
+                        </svg>
+                    </button>
+
+                    <button type="button" class="nav-btn" data-target="liability">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path>
+                            <path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path>
+                            <path d="M7 21h10"></path>
+                            <path d="M12 3v18"></path>
+                            <path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"></path>
+                        </svg>
+                        <span>Limitation of Liability</span>
+                        <svg class="icon chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m9 18 6-6-6-6"></path>
+                        </svg>
+                    </button>
+
+                    <button type="button" class="nav-btn" data-target="termination">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="m4.9 4.9 14.2 14.2"></path>
+                        </svg>
+                        <span>Termination</span>
+                        <svg class="icon chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m9 18 6-6-6-6"></path>
+                        </svg>
+                    </button>
+
+                    <button type="button" class="nav-btn" data-target="changes">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
+                            <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
+                            <path d="M10 9H8"></path>
+                            <path d="M16 13H8"></path>
+                            <path d="M16 17H8"></path>
+                        </svg>
+                        <span>Changes to These Terms</span>
+                        <svg class="icon chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m9 18 6-6-6-6"></path>
+                        </svg>
+                    </button>
+
+                    <button type="button" class="nav-btn" data-target="law">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path>
+                            <path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path>
+                            <path d="M7 21h10"></path>
+                            <path d="M12 3v18"></path>
+                            <path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"></path>
+                        </svg>
+                        <span>Governing Law</span>
+                        <svg class="icon chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m9 18 6-6-6-6"></path>
+                        </svg>
+                    </button>
+
+                    <button type="button" class="nav-btn" data-target="contact">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                        </svg>
+                        <span>Contact Us</span>
+                        <svg class="icon chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m9 18 6-6-6-6"></path>
+                        </svg>
+                    </button>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Main Terms Content -->
+        <article class="article-body">
+            <div class="intro-card" style="background-color: #2626264d;">
+                <h2 class="intro-title">A quick introduction</h2>
+                <p class="intro-text">
+                    iPrepare helps users practise through multiple-choice quizzes, track their study activity, and
+                    challenge other users. These Terms of Service govern your access to and use of the website,
+                    application, and related features.
+                </p>
+            </div>
+
+            <section id="acceptance" class="terms-section">
+                <h2 class="section-title">1. Acceptance of Terms</h2>
+                <div class="section-content">
+                    <p>
+                        By accessing or using iPrepare, you agree to these Terms of Service and any applicable laws and
+                        regulations. If you do not agree to these terms, you must stop using the platform.
+                    </p>
+                    <p>
+                        These terms should be read together with our Privacy Policy, which explains how we collect, use,
+                        store, and protect personal information.
+                    </p>
+                </div>
+            </section>
+
+            <section id="eligibility" class="terms-section">
+                <h2 class="section-title">2. Eligibility and Accounts</h2>
+                <div class="section-content">
+                    <p>
+                        You must provide accurate information when creating an account and keep your account details up
+                        to date. You are responsible for safeguarding your login credentials and for activities carried
+                        out through your account, subject to applicable law.
+                    </p>
+                    <p>
+                        If you are under 18, you may use iPrepare only with the involvement and permission of a parent
+                        or legal guardian where required by applicable law. Additional age-related requirements may
+                        apply to particular features.
+                    </p>
+                    <p>
+                        Do not impersonate another person, create accounts using false information, or attempt to access
+                        another user's account without authorization. Contact us promptly if you suspect unauthorized
+                        account access.
+                    </p>
+                </div>
+            </section>
+
+            <section id="services" class="terms-section">
+                <h2 class="section-title">3. Our Services</h2>
+                <div class="section-content">
+                    <p>
+                        iPrepare provides tools intended to help users practise and assess their knowledge through
+                        features that may include:
+                    </p>
+                    <ul>
+                        <li>
+                            Multiple-choice quizzes for competitive examinations such as JEE, NEET, UPSC, and other
+                            examinations or state-board subjects.
+                        </li>
+                        <li>
+                            Programming-related quizzes covering languages such as JavaScript, Python, C#, and other
+                            technical topics.
+                        </li>
+                        <li>
+                            Quizzes involving programming libraries, frameworks, and related technologies.
+                        </li>
+                        <li>
+                            Study activity, performance statistics, progress history, and other tracking features.
+                        </li>
+                        <li>
+                            Competitive challenges and other interactive quiz features.
+                        </li>
+                    </ul>
+                    <p>
+                        Features may change, be temporarily unavailable, or be discontinued as the platform develops. We
+                        do not guarantee uninterrupted access to every feature.
+                    </p>
+                </div>
+            </section>
+
+            <section id="challenges" class="terms-section">
+                <h2 class="section-title">4. Quizzes and Challenge Mode</h2>
+                <div class="section-content">
+                    <p>
+                        You agree to participate honestly and follow the instructions and rules associated with quizzes
+                        and challenges.
+                    </p>
+                    <ul>
+                        <li>
+                            Do not manipulate scores, exploit software bugs, or interfere with the results of a quiz or
+                            challenge.
+                        </li>
+                        <li>
+                            Do not use bots, scripts, unauthorized automation, or other methods to gain an unfair
+                            advantage.
+                        </li>
+                        <li>
+                            Do not collude with other users or misrepresent your performance.
+                        </li>
+                        <li>
+                            Challenge results, rankings, and statistics may depend on the rules and scoring mechanisms
+                            of the relevant feature.
+                        </li>
+                    </ul>
+                    <p>
+                        Quiz questions, answers, explanations, and scoring information may contain errors or omissions.
+                        Unless expressly stated otherwise, results are intended for practice and self-assessment and are
+                        not official examination results.
+                    </p>
+                </div>
+            </section>
+
+            <section id="conduct" class="terms-section">
+                <h2 class="section-title">5. Acceptable Use</h2>
+                <div class="section-content">
+                    <p>
+                        You must use iPrepare lawfully and respectfully. You must not:
+                    </p>
+                    <ul>
+                        <li>
+                            Use the platform for fraud, harassment, threats, unlawful activities, or abusive conduct.
+                        </li>
+                        <li>
+                            Upload or transmit malicious code or attempt to compromise the security of the platform.
+                        </li>
+                        <li>
+                            Reverse engineer, scrape, copy, or systematically extract platform data except where
+                            permitted by law or expressly authorized by us.
+                        </li>
+                        <li>
+                            Circumvent access controls, rate limits, account restrictions, or other security measures.
+                        </li>
+                        <li>
+                            Interfere with the normal operation or availability of iPrepare or other users' access to
+                            it.
+                        </li>
+                        <li>
+                            Use the platform to infringe the rights of others, including their intellectual property or
+                            privacy.
+                        </li>
+                    </ul>
+                    <p>
+                        We may investigate suspected violations and take proportionate action where appropriate and
+                        legally permitted.
+                    </p>
+                </div>
+            </section>
+
+            <section id="intellectual-property" class="terms-section">
+                <h2 class="section-title">6. Intellectual Property</h2>
+                <div class="section-content">
+                    <p>
+                        Unless otherwise indicated, the iPrepare name, logo, interface, design, software, and original
+                        platform materials are owned by or licensed to the platform operator and are protected by
+                        applicable intellectual property laws.
+                    </p>
+                    <p>
+                        You may use iPrepare for personal, non-commercial practice in accordance with these terms. You
+                        may not reproduce, redistribute, sell, or commercially exploit platform materials without
+                        permission, except where permitted by applicable law.
+                    </p>
+                    <p>
+                        Third-party names, trademarks, programming technologies, and examination names belong to their
+                        respective owners. Their appearance on iPrepare does not necessarily imply sponsorship,
+                        endorsement, or affiliation.
+                    </p>
+                </div>
+            </section>
+
+            <section id="disclaimer" class="terms-section">
+                <h2 class="section-title">7. Educational Disclaimer</h2>
+                <div class="section-content">
+                    <p>
+                        iPrepare is a practice and performance-tracking tool. It does not guarantee examination success,
+                        improved scores, admission to an institution, employment, or any particular academic or
+                        professional outcome.
+                    </p>
+                    <p>
+                        We strive to provide useful and accurate quiz material, but we do not warrant that every
+                        question, answer, explanation, score, or statistic will be error-free, complete, or suitable for
+                        every examination syllabus.
+                    </p>
+                    <p>
+                        You should verify important examination information, eligibility requirements, syllabuses,
+                        deadlines, and official results with the relevant examination authorities.
+                    </p>
+                </div>
+            </section>
+
+            <section id="liability" class="terms-section">
+                <h2 class="section-title">8. Limitation of Liability</h2>
+                <div class="section-content">
+                    <p>
+                        To the extent permitted by applicable law, iPrepare and its operator will not be liable for
+                        indirect, incidental, special, or consequential losses arising from your use of, or inability to
+                        use, the platform. Examples may include loss of data, interruption of access, or reliance on
+                        inaccurate practice material.
+                    </p>
+                    <p>
+                        Nothing in these terms excludes or limits liability where such exclusion or limitation is
+                        prohibited by law, including any mandatory consumer rights that apply to you.
+                    </p>
+                </div>
+            </section>
+
+            <section id="termination" class="terms-section">
+                <h2 class="section-title">9. Suspension and Termination</h2>
+                <div class="section-content">
+                    <p>
+                        You may stop using iPrepare at any time. Where account deletion is available, you may use the
+                        relevant account settings or contact us for assistance.
+                    </p>
+                    <p>
+                        We may suspend, restrict, or terminate access where reasonably necessary to protect users,
+                        investigate abuse, address security risks, enforce these terms, or comply with legal
+                        obligations. Where appropriate and legally permitted, we will provide notice or an opportunity
+                        to address the issue.
+                    </p>
+                    <p>
+                        Termination does not affect provisions that by their nature should continue to apply, such as
+                        intellectual property, disclaimers, and applicable liability limitations.
+                    </p>
+                </div>
+            </section>
+
+            <section id="changes" class="terms-section">
+                <h2 class="section-title">10. Changes to These Terms</h2>
+                <div class="section-content">
+                    <p>
+                        We may update these terms to reflect changes to iPrepare, our practices, or applicable legal
+                        requirements. When we make material changes, we will take reasonable steps to communicate them,
+                        where appropriate.
+                    </p>
+                    <p>
+                        The updated version will display a revised "Last updated" date. Your continued use of iPrepare
+                        after the updated terms take effect is subject to applicable law and any consent requirements.
+                    </p>
+                </div>
+            </section>
+
+            <section id="law" class="terms-section">
+                <h2 class="section-title">11. Governing Law and Disputes</h2>
+                <div class="section-content">
+                    <p>
+                        These terms are subject to the laws of India, without depriving you of any mandatory protections
+                        available under applicable law.
+                    </p>
+                    <p>
+                        Disputes will be addressed through good-faith communication where possible. Any court
+                        proceedings will be brought before a court with appropriate jurisdiction under applicable law.
+                    </p>
+                </div>
+            </section>
+
+            <section id="contact" class="terms-section">
+                <h2 class="section-title">12. Contact Us</h2>
+                <div class="section-content">
+                    <p>
+                        If you have questions about these Terms of Service, need assistance with your account, or wish
+                        to report a suspected violation, please contact the iPrepare team using the contact details
+                        below.
+                    </p>
+
+                    <div class="contact-card">
+                        <div class="contact-card-inner">
+                            <div class="contact-icon-box">
+                                <svg class="icon-lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="contact-heading">iPrepare Support</h3>
+                                <p class="contact-sub">Email</p>
+                                <a href="mailto:support@iprepare.com" class="contact-link">
+                                    support@iprepare.com
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="article-footer">
+                <div>
+                    <p class="footer-brand">iPrepare</p>
+                    <p class="footer-desc">
+                        iPrepare - State boards, Competitive Exams &amp; Coding Preparation, MCQ Quizzes &amp;
+                        Challenges.
+                    </p>
+                </div>
+
+                <button type="button" id="back-to-top" class="back-to-top-btn">
+                    Back to top
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m5 12 7-7 7 7"></path>
+                        <path d="M12 19V5"></path>
+                    </svg>
+                </button>
+            </footer>
+        </article>
+    </main>
+
+    <!-- JavaScript matching React component behavior -->
+    <script>
+        (function () {
+            const navButtons = document.querySelectorAll(".nav-btn");
+            const backToTopBtn = document.getElementById("back-to-top");
+
+            function setActiveSection(targetId) {
+                navButtons.forEach(function (button) {
+                    if (button.getAttribute("data-target") === targetId) {
+                        button.classList.add("active");
+                    } else {
+                        button.classList.remove("active");
+                    }
+                });
+            }
+
+            function navigateToSection(targetId) {
+                setActiveSection(targetId);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start",
+                    });
+                }
+            }
+
+            // Sidebar click handler
+            navButtons.forEach(function (button) {
+                button.addEventListener("click", function () {
+                    const targetId = button.getAttribute("data-target");
+                    if (targetId) {
+                        navigateToSection(targetId);
+                    }
+                });
+            });
+
+            // Back to top click handler
+            if (backToTopBtn) {
+                backToTopBtn.addEventListener("click", function () {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: "smooth",
+                    });
+                });
+            }
+        })();
+    </script>
+</body>
+
+</html>
