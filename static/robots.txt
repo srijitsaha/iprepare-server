@@ -11,4 +11,4 @@ Disallow: /exams/
 Disallow: /challenge-mode/
 Disallow: /dashboard/
 
-Sitemap: https://iprepare.onrender.com
+Sitemap: https://iprepare.onrender.com/
