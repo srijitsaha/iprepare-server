@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://iprepare.onrender.com">
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Core Static Landing Pages -->
   <url>
     <loc>https://iprepare.onrender.com/</loc>
@@ -7,20 +8,23 @@
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
-  
+
   <!-- Authentication Pages -->
+
   <url>
     <loc>https://iprepare.onrender.com/sign-in</loc>
     <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
+
   <url>
     <loc>https://iprepare.onrender.com/sign-up</loc>
     <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
+
   <url>
     <loc>https://iprepare.onrender.com/forgot-password</loc>
     <lastmod>2026-10-17</lastmod>
@@ -28,7 +32,8 @@
     <priority>0.3</priority>
   </url>
 
-  <!-- Challenge Mode Main Page Entry -->
+  <!-- Challenge Mode Main Page -->
+
   <url>
     <loc>https://iprepare.onrender.com/challenge-mode</loc>
     <lastmod>2026-10-17</lastmod>
