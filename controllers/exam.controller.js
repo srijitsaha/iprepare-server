@@ -225,8 +225,10 @@ export const findExamsByFiltering = async (req, res) => {
   try {
     const userId = req.user._id
 
-    const startDate = req.query.startDate.split('T')[0]
-    const endDate = req.query.endDate.split('T')[0]
+    let startDate = req.query.startDate.split('T')[0]
+    let endDate = new Date(req.query.endDate)
+    // Adding 1 day because day is index of days array (means [0, 1, 2, ..., 30]), so day starts from zero.
+    endDate = endDate.setDate(endDate.getDate() + 1)
 
     const examDetails = await ExamModel.find({ userId, startedAt: { $gte: new Date(startDate), $lte: new Date(endDate) } }).select({
       isCompleted: 1, totalQuestions: 1,
@@ -235,6 +237,7 @@ export const findExamsByFiltering = async (req, res) => {
 
     return res.status(200).json({ success: true, examDetails })
   } catch (error) {
+    console.log(error)
     return res.status(500).send({ message: "Something went wrong." })
   }
 }
