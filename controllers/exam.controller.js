@@ -61,7 +61,11 @@ export const reviewExamAnswers = async (req, res) => {
       }
     }))
 
-    return res.status(200).json({ correctionAnswer })
+    return res.status(200).json({ 
+      correctionAnswer, 
+      board: examDetails.board, subject: examDetails.subject, topic: examDetails.topic, totalQuestions: examDetails.totalQuestions, 
+      startedAt: examDetails.startedAt, completedAt: examDetails.completedAt, remarks: examDetails?.remarks || null, score: examDetails.score
+    })
   } catch (error) {
     return res.status(500).send(error)
   }
