@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { userAuthMW } from "../middlewares/auth.middleware.js"
-import { checkExamCompleted, createExam, reviewExamAnswers, reviewExamAnswersTest, viewExamResult } from "../controllers/exam.controller.js";
+import { askDoubtAboutAQuestionToAI, checkExamCompleted, createExam, reviewExamAnswers, reviewExamAnswersTest, viewExamResult } from "../controllers/exam.controller.js";
 import { completeExam, getQuestions, submitQuestionAnswer } from "../controllers/question.controller.js";
 
 const questionRouter = Router()
@@ -12,6 +12,9 @@ questionRouter.post('/complete-exam', userAuthMW, completeExam)
 questionRouter.get('/view-exam-result/:examId', userAuthMW, viewExamResult)
 questionRouter.get('/review-exam-answers/:examId', userAuthMW, reviewExamAnswers)
 questionRouter.get('/check-exam-completed/:examId', userAuthMW, checkExamCompleted)
+
+// AI feature - Ask doubt for incorrect answers of questions those are attempted in exams.
+questionRouter.post('/ask-doubt-for-wrong-answer', userAuthMW, askDoubtAboutAQuestionToAI)
 
 
 export default questionRouter
