@@ -1,5 +1,6 @@
 import { ExamModel } from "../models/exam.models.js"
 import { QuestionModel } from "../models/question.models.js"
+import { UserModel } from "../models/user.models.js"
 import { shuffleArray } from "../utilities/shuffleArray.js"
 
 export const getQuestions = async (req, res) => {
@@ -190,6 +191,12 @@ export const submitQuestionAnswer = async (req, res) => {
     // Execute update query into db
     const newExamData = await ExamModel.findByIdAndUpdate(examData._id, updateQuery, { returnDocument: 'after' })
 
+    
+
+    if(isLastQuestion) {
+      const addPoints = await UserModel.findByIdAndUpdate(examData.userId, { $inc: { newExamData: (newExamData.score * 10) } }, { returnDocument: 'after' })
+    }
+
 
 
     return res.status(200).send({
@@ -199,7 +206,8 @@ export const submitQuestionAnswer = async (req, res) => {
       isCompleted: isLastQuestion, 
       ...(isLastQuestion && { board: examData.board }), 
       ...(isLastQuestion && { subject: examData.subject }), 
-      ...(isLastQuestion && { topic: examData.topic })
+      ...(isLastQuestion && { topic: examData.topic }), 
+      ...(isLastQuestion && { pointsAdded: (newExamData.score * 10) })
     })
   } catch (error) {
     console.log(error)
