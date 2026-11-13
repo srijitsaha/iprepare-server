@@ -338,7 +338,7 @@ export const sendOtpForRegisterController = async (req, res) => {
         if (userExists) return res.status(409).json({ message: "User already exists." })
 
         // If an user does not exists with this email then generate a random 6-digit OTP
-        const otp = Math.floor(100000 + Math.random() * 900000)
+        const otp = crypto.randomInt(100000, 1000000).toString()
         const result = await OTPModel.create({ email, otp })
         if (!result) return res.status(500).json({ message: "Failed to create OTP." })
 
@@ -366,7 +366,7 @@ export const resendOtpForRegisterController = async (req, res) => {
         }
 
         // If the OTP has benn already expired with this email, then generate a new random 6-digit OTP
-        const otp = Math.floor(100000 + Math.random() * 900000)
+        const otp = crypto.randomInt(100000, 1000000).toString()
         const result = await OTPModel.create({ email, otp })
         if (!result) return res.status(500).json({ message: "Failed to create OTP." })
 
@@ -393,7 +393,7 @@ export const sendOtpForForgotPasswordController = async (req, res) => {
         if (!userExists) return res.status(409).json({ success: false, message: "No user found." })
 
         // If an user does not exists with this email then generate a random 6-digit OTP
-        const otp = Math.floor(100000 + Math.random() * 900000)
+        const otp = crypto.randomInt(100000, 1000000).toString()
         const result = await OTPModel.create({ email, otp })
         if (!result) return res.status(500).json({ success: false, message: "Failed to create OTP." })
         
@@ -424,7 +424,7 @@ export const resendOtpForForgotPasswordController = async (req, res) => {
         if (!userExists) return res.status(409).json({ message: "No user found." })
 
         // If the OTP has benn already expired with this email, then generate a new random 6-digit OTP
-        const otp = Math.floor(100000 + Math.random() * 900000)
+        const otp = crypto.randomInt(100000, 1000000).toString()
         const result = await OTPModel.create({ email, otp })
         if (!result) return res.status(500).json({ message: "Failed to create OTP." })
 
