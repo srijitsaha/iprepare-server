@@ -21,17 +21,23 @@ const io = new Server(server, {
 
 io.use((socket, next) => {
   cookieParser()(socket.request, {}, (err) => {
-    if (err) return next(err)
+    try {
 
-    // verify token (e.g. jwt.verify(token, ...)) and attach user info
-    const iprepare_access_token = jsonwebtoken.verify(socket.request.cookies.iprepare_access_token, process.env.JWT_SECRET_KEY)
+      if (err) return next(err)
 
-    if (!iprepare_access_token) {
-      return next(new Error('Authentication error'))
+      // verify token (e.g. jwt.verify(token, ...)) and attach user info
+      const iprepare_access_token = jsonwebtoken.verify(socket.request.cookies.iprepare_access_token, process.env.JWT_SECRET_KEY)
+
+      if (!iprepare_access_token) {
+        return next(new Error('Authentication error'))
+      }
+
+      socket.user = { userId: iprepare_access_token._id }  // replace with decoded user data
+      next()
+    } catch (error) {
+      console.log(error)
+      return next(new Error('Authentication error. Please sign in again.', error))
     }
-
-    socket.user = { userId: iprepare_access_token._id }  // replace with decoded user data
-    next()
   })
 })
 
@@ -79,14 +85,14 @@ io.on('connection', (socket) => {
   socket.on('complete-challenge', async (data) => {
     // Finding user id from challenge id
     const challengeData = await ChallengeModel.findById(data.challengeId).select('userId')
-    if(!challengeData.userId.includes(socket.user.userId)) {
-      return io.to(socket.id).emit('error' , {
+    if (!challengeData.userId.includes(socket.user.userId)) {
+      return io.to(socket.id).emit('error', {
         message: "Unauthorized access."
       })
     }
 
     // Finding opponent id that belongs to the challenge 
-    let opponentId = challengeData.userId[0] == socket.user.userId ? challengeData.userId[1]: challengeData.userId[0]
+    let opponentId = challengeData.userId[0] == socket.user.userId ? challengeData.userId[1] : challengeData.userId[0]
 
     // Get the corresponding socket id from opponent id
     let opponentSocketId = socketIdMap.get(opponentId)
