@@ -26,7 +26,20 @@ export const userAuthMW = async (req, res, next) => {
             return res.send({ message: "Please sign in", loggedIn: false, isNotSignedIn: true })
         }
     } catch (error) {
-        console.log(error)
+        console.log(error.message == 'jwt expired')
+        if(error.message == 'jwt expired') {
+            // Decoding refresh token by jwt through secret key
+            let decoded_refresh_token = jsonwebtoken.verify(req.cookies.iprepare_refresh_token, process.env.JWT_SECRET_KEY)
+            // console.log(decoded_refresh_token)
+
+            // Fetching user id from existing session id
+            let user = await SessionModel.findById(decoded_refresh_token._id)
+            let access_token = jsonwebtoken.sign({ _id: user.userId }, process.env.JWT_SECRET_KEY, { expiresIn: '1h' })
+            req.user = { _id: user._id }
+            res.cookie('iprepare_access_token', access_token, { maxAge: process.env.ACCESS_TOKEN_EXPIRE_DURATION, httpOnly: true })
+            next()
+        }
+        
         return res.send({ message: "Some error occured", loggedIn: false, isNotSignedIn: true })
     }
 }
