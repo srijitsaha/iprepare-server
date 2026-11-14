@@ -413,8 +413,16 @@ export const viewChallengeResultController = async (req, res) => {
 
 export const getChallengesByFilteringController = async (req, res) => {
     try {
-        const { host, board, subject, topic, winner, sortBy, sortType } = req.query
+        let { host, board, subject, topic, winner, sortBy, sortType } = req.query
         const allowedKeys = ['host', 'board', 'subject', 'topic', 'winner', 'sortBy', 'sortType']
+
+        if(sortBy && sortBy == 'Started At') {
+            sortBy = 'createdAt'
+        }
+
+        if(sortBy && !(['createdAt', 'score', 'totalQuestions'].includes(sortBy))) {
+            return res.json({ success: false, message: "Sort field only contains createdAt or score." })
+        }
 
         if (board && subject && topic) {
             // const matchedChallenges = await ChallengeModel.find({
