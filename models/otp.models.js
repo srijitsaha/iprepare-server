@@ -3,8 +3,7 @@ import mongoose from "mongoose";
 const OTPSchema = new mongoose.Schema({
     email: { type: String, required: true, unique: [true, "OTP has already been sent to this email"] }, 
     otp: { type: String, required: true }, 
-    attemptsLeft: { type: Number, default: 4 }, 
-    expiresAt: { type: Date, default: Date.now() + (2 * 60 * 1000) }
+    attemptsLeft: { type: Number, default: 4 }
 }, { timestamps: true })
 
 // Auto-delete OTP after 2 minutes
