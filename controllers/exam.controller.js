@@ -1,3 +1,4 @@
+import mongoose from "mongoose"
 import { ExamModel } from "../models/exam.models.js"
 import { QuestionModel } from "../models/question.models.js"
 import { UserModel } from "../models/user.models.js"
@@ -104,6 +105,7 @@ export const viewExamResult = async (req, res) => {
 
     // Aggregation query that calculate difference between start time and end time.
     let timeDifference = await ExamModel.aggregate([
+      { $match: { _id: new mongoose.Types.ObjectId(examData._id.toString()) } }, 
       {
         $project: {
           differenceInSeconds: {
