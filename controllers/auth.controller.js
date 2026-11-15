@@ -172,15 +172,12 @@ export const getGoogleLoginCallbackPage = async (req, res) => {
         const accessTokenPayload = { _id: user._id.toString(), email: user.email, sessionId: session._id.toString() };
         const refreshTokenPayload = { sessionId: session._id.toString() };
 
-        const accessToken = jwt.sign(accessTokenPayload, process.env.JWT_SECRET_KEY, { expiresIn: '1d' });
-        const refreshToken = jwt.sign(refreshTokenPayload, process.env.JWT_SECRET_KEY, { expiresIn: '7d' });
+        const accessToken = jwt.sign(accessTokenPayload, process.env.JWT_SECRET_KEY, { expiresIn: '15m' });
+        const refreshToken = jwt.sign(refreshTokenPayload, process.env.JWT_SECRET_KEY, { expiresIn: '30d' });
 
-        const responseCookieOptions = {
-            httpOnly: true,
-            maxAge: 7 * 24 * 60 * 60 * 1000 // 7 days
-        };
-        res.cookie("iprepare_access_token", accessToken, { ...responseCookieOptions, maxAge: 1 * 24 * 60 * 60 * 1000 }); // 1 day
-        res.cookie("iprepare_refresh_token", refreshToken, responseCookieOptions);
+
+        res.cookie("iprepare_access_token", accessToken, { httpOnly: true, maxAge: process.env.ACCESS_TOKEN_EXPIRE_DURATION });         // 30 minutes
+        res.cookie("iprepare_refresh_token", refreshToken, { httpOnly: true, maxAge: process.env.REFRESH_TOKEN_EXPIRE_DURATION });      // 30 days
 
         // Redirect to dashboard or appropriate page
         res.redirect("/"); // Or "/complete-profile" for new users if needed

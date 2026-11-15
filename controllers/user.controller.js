@@ -52,7 +52,7 @@ export const signupController = async (req, res) => {
         })
 
         // Creating new access token and refresh token with jsonwebtoken
-        let access_token = jsonwebtoken.sign({ _id: newUser._id }, process.env.JWT_SECRET_KEY, { expiresIn: '1h' })
+        let access_token = jsonwebtoken.sign({ _id: newUser._id }, process.env.JWT_SECRET_KEY, { expiresIn: '15m' })
         let refresh_token = jsonwebtoken.sign({ _id: newSession._id }, process.env.JWT_SECRET_KEY, { expiresIn: '30d' })
 
         // Setting up access token and refresh token as cookies 
@@ -107,7 +107,7 @@ export const signinController = async (req, res) => {
         })
 
         // Creating new access token and refresh token with jsonwebtoken
-        let access_token = jsonwebtoken.sign({ _id: user._id }, process.env.JWT_SECRET_KEY, { expiresIn: '30d' })
+        let access_token = jsonwebtoken.sign({ _id: user._id }, process.env.JWT_SECRET_KEY, { expiresIn: '15m' })
         let refresh_token = jsonwebtoken.sign({ _id: newSession._id }, process.env.JWT_SECRET_KEY, { expiresIn: '30d' })
 
 
