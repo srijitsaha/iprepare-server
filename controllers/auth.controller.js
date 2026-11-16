@@ -100,7 +100,7 @@ export const getGoogleLoginCallbackPage = async (req, res) => {
                 return res.redirect("/login?error=account_linking_error");
             }
             // User found, proceed to login
-            session = await SessionModel.create({ userId: user._id, userAgent, ip });
+            session = await SessionModel.create({ userId: user._id, userAgent, ip, expiresAt: Date.now() + Number(process.env.REFRESH_TOKEN_EXPIRE_DURATION) });
 
         } else {
             //? Case 2 or 3: Check if user exists with this email (but not linked to this Google account yet)
@@ -115,7 +115,7 @@ export const getGoogleLoginCallbackPage = async (req, res) => {
                     provider: "google",
                     providerAccountId: googleUserId
                 });
-                session = await SessionModel.create({ userId: user._id, userAgent, ip });
+                session = await SessionModel.create({ userId: user._id, userAgent, ip, expiresAt: Date.now() + Number(process.env.REFRESH_TOKEN_EXPIRE_DURATION) });
 
             } else {
                 console.log("OAuth Case 3: New user registration via Google OAuth.");
@@ -148,7 +148,7 @@ export const getGoogleLoginCallbackPage = async (req, res) => {
                         providerAccountId: googleUserId
                     });
 
-                    session = await SessionModel.create({ userId: user._id, userAgent, ip });
+                    session = await SessionModel.create({ userId: user._id, userAgent, ip, expiresAt: Date.now() + Number(process.env.REFRESH_TOKEN_EXPIRE_DURATION) });
 
                     // TODO: Consider redirecting to a profile completion page here
                     // return res.redirect("/complete-profile");
@@ -176,8 +176,8 @@ export const getGoogleLoginCallbackPage = async (req, res) => {
         const refreshToken = jwt.sign(refreshTokenPayload, process.env.JWT_SECRET_KEY, { expiresIn: '30d' });
 
 
-        res.cookie("iprepare_access_token", accessToken, { httpOnly: true, maxAge: process.env.ACCESS_TOKEN_EXPIRE_DURATION });         // 30 minutes
-        res.cookie("iprepare_refresh_token", refreshToken, { httpOnly: true, maxAge: process.env.REFRESH_TOKEN_EXPIRE_DURATION });      // 30 days
+        res.cookie("iprepare_access_token", accessToken, { httpOnly: true, maxAge: process.env.ACCESS_TOKEN_EXPIRE_DURATION, secure: process.env.NODE_ENV == 'production' });         // 30 minutes
+        res.cookie("iprepare_refresh_token", refreshToken, { httpOnly: true, maxAge: process.env.REFRESH_TOKEN_EXPIRE_DURATION, secure: process.env.NODE_ENV == 'production' });      // 30 days
 
         // Redirect to dashboard or appropriate page
         res.redirect("/"); // Or "/complete-profile" for new users if needed

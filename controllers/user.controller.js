@@ -56,8 +56,8 @@ export const signupController = async (req, res) => {
         let refresh_token = jsonwebtoken.sign({ _id: newSession._id }, process.env.JWT_SECRET_KEY, { expiresIn: '30d' })
 
         // Setting up access token and refresh token as cookies 
-        res.cookie('iprepare_access_token', access_token, { maxAge: process.env.ACCESS_TOKEN_EXPIRE_DURATION, httpOnly: true })
-        res.cookie('iprepare_refresh_token', refresh_token, { maxAge: process.env.REFRESH_TOKEN_EXPIRE_DURATION, httpOnly: true })
+        res.cookie('iprepare_access_token', access_token, { maxAge: process.env.ACCESS_TOKEN_EXPIRE_DURATION, httpOnly: true, secure: process.env.NODE_ENV == 'production' })
+        res.cookie('iprepare_refresh_token', refresh_token, { maxAge: process.env.REFRESH_TOKEN_EXPIRE_DURATION, httpOnly: true, secure: process.env.NODE_ENV == 'production' })
 
         // Setting up streaks
         // const streaks = await StreaksModel.create({ userId: newUser._id.toString() })
@@ -118,8 +118,8 @@ export const signinController = async (req, res) => {
 
 
         // Setting up access token and refresh token as cookies 
-        res.cookie('iprepare_access_token', access_token, { maxAge: process.env.ACCESS_TOKEN_EXPIRE_DURATION, httpOnly: true })
-        res.cookie('iprepare_refresh_token', refresh_token, { maxAge: process.env.REFRESH_TOKEN_EXPIRE_DURATION, httpOnly: true })
+        res.cookie('iprepare_access_token', access_token, { maxAge: process.env.ACCESS_TOKEN_EXPIRE_DURATION, httpOnly: true, secure: process.env.NODE_ENV == 'production' })
+        res.cookie('iprepare_refresh_token', refresh_token, { maxAge: process.env.REFRESH_TOKEN_EXPIRE_DURATION, httpOnly: true, secure: process.env.NODE_ENV == 'production' })
 
 
         // Sending response to user
