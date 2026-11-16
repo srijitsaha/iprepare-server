@@ -1,5 +1,6 @@
 import express from "express"
 import cors from "cors"
+import helmet from "helmet"
 import path from 'path'
 import userRouter from "./routes/user.routes.js"
 import mongoose from "mongoose"
@@ -18,9 +19,22 @@ const app = express()
 //     credentials: true
 // }))
 
+app.use(helmet({
+  xFrameOptions: false,
+}))
+
 
 app.use(cookieParser())
-app.use(express.json())
+app.use(express.json({ limit: '50kb' }))
+
+
+
+app.use((err, req, res, next) => {
+  if (err.type === 'entity.too.large') {
+    return res.status(413).json({ error: 'Payload too large. Maximum size is 50KB.' });
+  }
+  next(err);
+});
 
 app.use(express.static(path.join(import.meta.dirname, "static")))
 
