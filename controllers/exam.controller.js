@@ -309,7 +309,7 @@ export const askDoubtAboutAQuestionToAI = async (req, res) => {
       return res.status(401).send({ success: false, message: "The exam does not belong to this user." })
     }
     
-    if (!examData.answers[questionId]) {
+    if (!(examData.questions.includes(questionId))) {
       return res.status(401).send({ success: false, message: "The question does not belong to this exam." })
     }
     
@@ -346,7 +346,7 @@ export const askDoubtAboutAQuestionToAI = async (req, res) => {
       // If OpenRouter requests fail because of invalid API key, syntax error due to modifying rules of SDK, daily limit exhausted or any other reasons then automatically switch to NVIDIA free API with fetch request.
       if (error.statusCode <= 429 && error.statusCode >= 400) {
         try {
-          console.log("Switching to Nvidia ", systemPrompt, userPrompt)
+          console.log("Switching to Nvidia...")
           const nvidiaResult = await fetch("https://integrate.api.nvidia.com/v1/chat/completions", {
             method: "POST", 
             headers: {
