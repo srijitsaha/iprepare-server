@@ -406,7 +406,7 @@ export const sendOtpForForgotPasswordController = async (req, res) => {
         if (error.code === 11000) {
             return res.status(401).json({ success: false, message: "OTP has already been sent to this email" })
         }
-        return res.status(400).send(error)
+        return res.status(400).send({ success: false, message: "Something went wrong." })
     }
 }
 
@@ -537,6 +537,6 @@ export const signOutController = async (req, res) => {
 
         return res.status(200).send({ success: true, message: "You have been signed out successfully." })
     } catch (error) {
-        return res.send({ success: true, message: "Some error occured." })
+        return res.send({ success: false, message: "Some error occured." })
     }
 }

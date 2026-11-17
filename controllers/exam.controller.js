@@ -21,7 +21,7 @@ export const createExam = async (req, res) => {
 
     return res.json({ examId: newExam._id, message: "Exam has been started" })
   } catch (error) {
-    return res.send({ message: "Error while starting exam.", error })
+    return res.send({ message: "Error while starting exam.", success: false })
   }
 }
 
@@ -73,7 +73,7 @@ export const reviewExamAnswers = async (req, res) => {
       startedAt: examDetails.startedAt, completedAt: examDetails.completedAt, remarks: examDetails?.remarks || null, score: examDetails.score
     })
   } catch (error) {
-    return res.status(500).send(error)
+    return res.status(500).send({ success: false, message: "Something went wrong." })
   }
 }
 
@@ -162,7 +162,7 @@ export const getDailyStreaks = async (req, res) => {
     return res.status(200).json(actualDateData)
   } catch (error) {
     console.log(error)
-    return res.status(500).send({ message: "Internal Server Error" })
+    return res.status(500).send({ success: false, message: "Something went wrong." })
   }
 }
 
@@ -226,7 +226,7 @@ export const getUserReportGroupByTopic = async (req, res) => {
     return res.status(200).json(result)
   } catch (error) {
     console.log(error)
-    return res.status(500).send({ message: "Internal Server Error." })
+    return res.status(500).send({ success: false, message: "Something went wrong." })
   }
 }
 
@@ -249,7 +249,7 @@ export const findExamsByFiltering = async (req, res) => {
     return res.status(200).json({ success: true, examDetails })
   } catch (error) {
     console.log(error)
-    return res.status(500).send({ message: "Something went wrong." })
+    return res.status(500).send({ success: false, message: "Something went wrong." })
   }
 }
 
@@ -286,7 +286,7 @@ export const reviewExamAnswersTest = async (req, res) => {
     return res.status(200).json({ correctionAnswer })
   } catch (error) {
     console.log(error)
-    return res.status(500).send(error)
+    return res.status(500).send({ success: false, message: "Something went wrong." })
   }
 }
 

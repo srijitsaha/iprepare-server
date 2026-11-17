@@ -86,7 +86,7 @@ export const getChallengeQuestions = async (req, res) => {
         }
     } catch (error) {
         console.log(error)
-        return res.status(501).send({ message: "Something went wrong." })
+        return res.status(501).send({ success: false, message: "Something went wrong." })
     }
 }
 
@@ -308,7 +308,7 @@ export const submitChallengedQuestionAnswerController = async (req, res) => {
         })
     } catch (error) {
         console.log(error)
-        return res.status(500).send({ message: "Something went wrong." })
+        return res.status(500).send({ success: false, message: "Something went wrong." })
     }
 }
 
@@ -405,7 +405,7 @@ export const viewChallengeResultController = async (req, res) => {
         return res.json({ user1Result, user2Result, challengeInfo })
     } catch (error) {
         console.log(error)
-        return res.send({ success: false, error })
+        return res.send({ success: false, message: "Something went wrong." })
     }
 }
 
@@ -529,6 +529,6 @@ export const getChallengesByFilteringController = async (req, res) => {
         }
 
     } catch (error) {
-        return res.send({ success: false })
+        return res.send({ success: false, message: "Something went wrong." })
     }
 }
